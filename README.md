@@ -4,6 +4,13 @@
 
 ## Before starting :D 
    Thank's To Everyone who Will support or help me or share my script
+## Screenshots : 
+![first born](https://i.imgur.com/HVNYCDL.png)
+![1](https://i.imgur.com/LbLu9ww.png)
+![2](https://i.imgur.com/RguNRLU.png)
+![3](https://i.imgur.com/BdUHzjR.png)
+![4](https://i.imgur.com/zxeFE8v.png)
+![5](https://i.imgur.com/yUGBOgL.png)
 
 ## ./How the Script works ? 
    * [Full Explanation](https://pastebin.com/raw/7XiBkskg)
