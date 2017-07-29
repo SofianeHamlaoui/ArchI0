@@ -7,7 +7,6 @@
 #  +FIRST  : sudo chmod +x ArchI0live.sh                 #
 #                (Give EXEC Access To Script)            #
 #  +TO RUN    : sudo ./ArchI0live.sh                     #
-#    +DEMO VIDEO :  http://youtu.be/////////////         #
 ##########################################################
 # Variables
 b='\033[1m'
@@ -85,20 +84,90 @@ function initpacmanupd {
   echo; echo " Updating ..... "; xterm -e pacman -Syu --noconfirm   ; echo "Update Completed"; sleep 1;
 }
 
-#The commands
-function commands {
-pacman -S xterm --noconfirm
+
+function checkfiglet {
+	which figlet > /dev/null 2>&1
+	if [ "$?" -eq "0" ]; then
+	echo [✔]::[Figlet]: installation found!;
+else
+
+echo [x]::[warning]:this script require Figlet ;
+echo ""
+echo [!]::[please wait]: please install .... ;
 xterm -e pacman -S --noconfirm figlet
+echo ""
+sleep 2
+exit
+fi
+sleep 2
+
+}
+function checkleafpad {
+	which leafpad > /dev/null 2>&1
+	if [ "$?" -eq "0" ]; then
+	echo [✔]::[Leafpad]: installation found!;
+else
+
+echo [x]::[warning]:this script require Leafpad ;
+echo ""
+echo [!]::[please wait]: please install .... ;
 xterm -e pacman -S --noconfirm leafpad
+echo ""
+sleep 2
+exit
+fi
+sleep 2
+
+}
+
+function checkxterm {
+	which xterm > /dev/null 2>&1
+	if [ "$?" -eq "0" ]; then
+	echo [✔]::[Xterm]: installation found!;
+else
+
+echo [x]::[warning]:this script require Xterm ;
+echo ""
+echo [!]::[please wait]: please install .... ;
+pacman -S xterm --noconfirm
+echo ""
+sleep 2
+exit
+fi
+sleep 2
+
+}
+
+function checkwget {
+	which wget > /dev/null 2>&1
+	if [ "$?" -eq "0" ]; then
+	echo [✔]::[wget]: installation found!;
+else
+
+echo [x]::[warning]:this script require wget ;
+echo ""
+echo [!]::[please wait]: please install .... ;
 xterm -e pacman -S --noconfirm wget
+echo ""
+sleep 2
+exit
+fi
+sleep 2
+
+}
+
+#The license
+function licensee {
+
 xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/License
 xterm -e leafpad License
 xterm -e rm License
 }
 # Script Initiation
-commands && sleep 1
+checkroot && sleep 1
+checkxterm && checkleafpad && checkfiglet && checkwget && licensee && sleep 1
 showlogo && echo -e " ${y} Preparing To Run Script${endc}"
-checkroot && archicheck && sleep 1
+archicheck && sleep 1
 initpacmanupd && installarchi0 && sleep 1
 
 # Install Emacs
