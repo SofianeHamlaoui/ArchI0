@@ -81,7 +81,7 @@ function checkroot {
 
 # Initial pacman -Syu
 function initpacmanupd {
-  echo; echo " Updating ..... "; xterm -e pacman -Syu --noconfirm   ; echo "Update Completed"; sleep 1;
+  echo; echo " Updating ..... | please stop any install process before updating  "; xterm -e pacman -Syu --noconfirm   ; echo "Update Completed"; sleep 1;
 }
 
 
@@ -96,8 +96,6 @@ echo ""
 echo [!]::[please wait]: please install .... ;
 xterm -e pacman -S --noconfirm figlet
 echo ""
-sleep 2
-exit
 fi
 sleep 2
 
@@ -113,8 +111,6 @@ echo ""
 echo [!]::[please wait]: please install .... ;
 xterm -e pacman -S --noconfirm leafpad
 echo ""
-sleep 2
-exit
 fi
 sleep 2
 
@@ -131,8 +127,6 @@ echo ""
 echo [!]::[please wait]: please install .... ;
 pacman -S xterm --noconfirm
 echo ""
-sleep 2
-exit
 fi
 sleep 2
 
@@ -148,9 +142,8 @@ echo [x]::[warning]:this script require wget ;
 echo ""
 echo [!]::[please wait]: please install .... ;
 xterm -e pacman -S --noconfirm wget
+echosleep 2
 echo ""
-sleep 2
-exit
 fi
 sleep 2
 
