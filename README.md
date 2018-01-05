@@ -2,7 +2,7 @@
 ## ArchI0 : ArchLinux Applications Automatic Installation Script
 ### This script Is under GPLv3 License
 
-## Before starting :D 
+## Before starting
    Thank's To Everyone who Will support or help me or share my script
 ## Screenshots : 
 ![first born](https://i.imgur.com/HVNYCDL.png)
