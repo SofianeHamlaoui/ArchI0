@@ -23,19 +23,13 @@
    i got the Applications from {Archlinux ALL APPLICATIONS List } { Gnome Applications} {KDE Applications } { XFCE Applications }
    
 ### ./How i organise them and execute them ?
-### 1
+### 1. First before adding the program i check it first , i install it on my laptop and try it ( if there is no bugs or errors ) 
 
-First before adding the program i check it first , i install it on my laptop and try it ( if there is no bugs or errors ) 
-
-### 2    
-
-I Added the program to the lists and add his own installation function
+### 2. I Add the program to the list and add its own installation function
  
-### 3 
-I google the program for some short descriptions
+### 3. I google the program for some short descriptions
 
-### 4  
-   I added the program installation command + short descriptions + shorted link to the website or full documentation of the program
+### 4. I add the program installation command + short descriptions + shorted link to the website or full documentation of the program
    
 ### ./Why Using Shorted Links? 
 Yeah, i use it to see how much people are downloading and caring about my script ,  you can check it or scan it or do whatever you want.
