@@ -24,20 +24,10 @@ endc='\E[0m'
 enda='\033[0m'
 spath="$( cd "$( dirname $0 )" && pwd )"
 
-#Cheking Os Architecture
-function archicheck {
-  echo -en " ${y} What Is Your OS Architecture? {32/64}${endc} "
-  read option
-  case $option in
-  32) xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/32/pacman.conf -O /etc/pacman.conf ; sleep 1;;
-  64) xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/64/pacman.conf -O /etc/pacman.conf ; sleep 1;;
-  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; initpacmanupd ;;
-  esac
-}
 # archio Logo
 function showlogo {
   clear
-figlet -c -f slant "ArchI0 v1.1"
+figlet -c -f slant "ArchI0 v1.2"
 echo -e "This script Is under GPLv3 License"
     echo
 }
@@ -2062,9 +2052,9 @@ function showabout {
     #    Arch Applications Automatic Installation Script      #
     ###########################################################
     #    -- Op-System: Arch Linux World <3                    #
-    #    -- Version: v1.1 21/06/2017                          #
+    #    -- Version: v1.2 08/05/2018                          #
     #    -- Developer: Sifo Hamlaoui                          #
-    #    -- Thanks: Heta Wahed -_-                            #
+    #    -- Thanks: No One                                    #
     ###########################################################
 
      ${b}Description${enda}
@@ -2072,7 +2062,7 @@ function showabout {
    A Fresh Install Of ArchLinux , Saving Time To Use It.
    On This Script I Added All The Softwares From The Full List Of Archlinux Applications,
    check it here :  https://goo.gl/xfdnQm
-   The Script Have Exactly ( v1.1 ) 90 Arch Linux Programs .
+   The Script Have Exactly ( v1.2 ) 90 Arch Linux Programs .
    ${r}Ps:This script Is Like The KAAISv3 Script but for Arch Linux And More Developed :D${endc}
     "
   echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
@@ -2082,8 +2072,8 @@ function showabout {
 # Exit archI0
 function archioexit {
   showlogo && echo -e " Thank You For Using ${b} ArchI0 Script ${enda}
- For More Information Visit:
- ${b}==>> ${bu}https://www.facebook.com/S1fo.Hamlaoui${enda}"
+ For More Information Send Me An Email : :
+ ${b}==>> ${bu}ArchI0.sh.dev@gmail.com${enda}"
   echo
   sleep 1
   exit
@@ -2239,5 +2229,5 @@ q) archioexit ;;
 
 esac
 done
-
+#ELHAMDOULLILAH <3
 # End
