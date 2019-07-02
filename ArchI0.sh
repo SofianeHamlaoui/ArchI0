@@ -29,7 +29,7 @@ if [ ! -e "/usr/bin/ArchI0" ];then
 	echo -en "\e[32m[-] : Script is not installed. Do you want to install it ? (Y/N) !\e[0m"
 	read install
 	if [[ $install = Y || $install = y ]] ; then
-		xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/ArchI0.sh -O /usr/bin/ArchI0
+		xterm -e wget https://raw.githubusercontent.com/SofianeHamlaoui/ArchI0/master/ArchI0.sh -O /usr/bin/ArchI0
 		chmod +x /usr/bin/ArchI0
 		echo "Script should now be installed. Launching it !"
 		sleep 3
@@ -169,7 +169,7 @@ sleep 2
 #The license
 function licensee {
 
-xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/License
+xterm -e wget https://raw.githubusercontent.com/SofianeHamlaouiHamlaoui/ArchI0/master/License
 xterm -e leafpad License
 xterm -e rm License
 }
@@ -2414,7 +2414,7 @@ function showabout {
     ###########################################################
     #    -- Op-System: Arch Linux World <3                    #
     #    -- Version: v2.0 08/05/2018                          #
-    #    -- Developer: Sifo Hamlaoui                          #
+    #    -- Developer: Sofiane Hamlaoui                       #
     #    -- Thanks: No One                                    #
     ###########################################################
 
