@@ -1,5 +1,5 @@
-# 3AIS 2.0
-> 3AIS : ArchLinux Applications Automatic Installation Script
+# ArchI0 2.0
+> ArchI0 : ArchLinux Applications Automatic Installation Script
 
 
 90 'Easy-to-install' Arch Linux Programs on 8 Categories
@@ -16,9 +16,9 @@
 
 
 ```sh
-git clone https://github.com/SofianeHamlaoui/3AIS.git & cd 3AIS
-chmod +x ./3AISlive.sh
-./3AISlive.sh
+git clone https://github.com/SofianeHamlaoui/ArchI0.git & cd ArchI0
+chmod +x ./ArchI0live.sh
+./ArchI0live.sh
 ```
 
 ## How ?
@@ -46,14 +46,14 @@ You can install 20 apps using yaout ( from AUR ) and 70 using pacman ( total of 
 * Installing the script : 
 
 
-`To use 3AIS from terminal directly with the command '3AIS' `
+`To use ArchI0 from terminal directly with the command 'ArchI0' `
 
 * Executing as ROOT : 
 
 `The script need's the root privileges to install and make the updates for the softwares`
 
 
-* Using 2 scripts : {3AISlive & 3AIS}
+* Using 2 scripts : {ArchI0live & ArchI0}
 
 ` 
 The live one is to use it without installation { in this case } the script will install the required programs and ask for the script installation { in case you change your mind }
@@ -69,11 +69,11 @@ Sofiane Hamlaoui – [Facebook:Sifo Hamlaoui](https://www.facebook.com/S1fo.Haml
 
 Distributed under the GPL-3.0 license. See ``LICENSE`` for more information.
 
-[https://github.com/SofianeHamlaoui/3AIS](https://github.com/SofianeHamlaoui/)
+[https://github.com/SofianeHamlaoui/ArchI0](https://github.com/SofianeHamlaoui/)
 
 ## Contributing
 
-1. Fork it (<https://github.com/SofianeHamlaoui/3AIS/fork>)
+1. Fork it (<https://github.com/SofianeHamlaoui/ArchI0/fork>)
 2. Create your feature branch
 3. Commit your changes 
 4. Push to the branch 
