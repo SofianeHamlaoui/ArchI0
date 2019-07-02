@@ -1,12 +1,12 @@
 #!/bin/bash
 #Let's Begin ::
 ##########################################################
-#                 ArchI0 script                          #
+#                 ArchI0 script                            #
 #  ArchLinux Applications Automatic Installation Script  #
 ##########################################################
-#  +FIRST  : sudo chmod +x ArchI0live.sh                 #
+#  +FIRST  : sudo chmod +x ArchI0live.sh                   #
 #                (Give EXEC Access To Script)            #
-#  +TO RUN    : sudo ./ArchI0live.sh                     #
+#  +TO RUN    : sudo ./ArchI0live.sh                       #
 ##########################################################
 # Variables
 b='\033[1m'
@@ -24,7 +24,7 @@ enda='\033[0m'
 spath="$( cd "$( dirname $0 )" && pwd )"
 ######################################1ST PART###################################################
 #Install script if not installed
-function installarchi0 {
+function installArchI0 {
 if [ ! -e "/usr/bin/ArchI0" ];then
 	echo -en "\e[32m[-] : Script is not installed. Do you want to install it ? (Y/N) !\e[0m"
 	read install
@@ -51,15 +51,28 @@ function archicheck {
   echo -en " ${y} What Is Your OS Architecture? {32/64}${endc} "
   read option
   case $option in
-  32) xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/32/pacman.conf -O /etc/pacman.conf ; sleep 1;;
-  64) xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/64/pacman.conf -O /etc/pacman.conf ; sleep 1;;
+  32) xterm -e sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf ; sleep 1;;
+  64) xterm -e sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf ; sleep 1;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; initpacmanupd ;;
   esac
 }
+
+
+#Adding ArchlinuxFr repo
+function yaourtadd {
+  echo -en " ${y} Do you want to use Yaourt ?( To install apps from AUR ){Yes/No}${endc} "
+  read option
+  case $option in
+  Yes) xterm -e printf "[archlinuxfr]\nSigLevel = Required DatabaseOptional TrustedOnly\nServer = http://repo.archlinux.fr/$arch\n" >> /etc/pacman.conf ; sleep 1;;
+  No) sleep 1;;
+  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; initpacmanupd ;;
+  esac
+}
+
 # archio Logo
 function showlogo {
   clear
-figlet -c -f slant "ArchI0 v1.2"
+figlet -c -f slant "ArchI0 v2.0"
 echo -e "This script Is under GPLv3 License"
     echo
 }
@@ -160,12 +173,13 @@ xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files
 xterm -e leafpad License
 xterm -e rm License
 }
+
 # Script Initiation
 checkroot && sleep 1
 checkxterm && checkleafpad && checkfiglet && checkwget && licensee && sleep 1
 showlogo && echo -e " ${y} Preparing To Run Script${endc}"
-archicheck && sleep 1
-initpacmanupd && installarchi0 && sleep 1
+archicheck && yaourtadd && sleep 1
+initpacmanupd && installArchI0 && sleep 1
 #################################################################################################
 #######################################2ND PART##################################################
 ######### Programs Installations : START :  ##########################
@@ -2316,7 +2330,7 @@ function showabout {
     #    Arch Applications Automatic Installation Script      #
     ###########################################################
     #    -- Op-System: Arch Linux World <3                    #
-    #    -- Version: v1.2 08/05/2018                          #
+    #    -- Version: v2.0 08/05/2018                          #
     #    -- Developer: Sifo Hamlaoui                          #
     #    -- Thanks: No One                                    #
     ###########################################################
@@ -2326,14 +2340,14 @@ function showabout {
    A Fresh Install Of ArchLinux , Saving Time To Use It.
    On This Script I Added All The Softwares From The Full List Of Archlinux Applications,
    check it here :  https://goo.gl/xfdnQm
-   The Script Have Exactly ( v1.2 ) 90 Arch Linux Programs .
+   The Script Have Exactly ( v2.0 ) 90 Arch Linux Programs .
    ${r}Ps:This script Is Like The KAAISv3 Script but for Arch Linux And More Developed :D${endc}
     "
   echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
   read input
 }
 
-# Exit archI0
+# Exit ArchI0
 function archioexit {
   showlogo && echo -e " Thank You For Using ${b} ArchI0 Script ${enda}
  For More Information Send Me An Email : :
