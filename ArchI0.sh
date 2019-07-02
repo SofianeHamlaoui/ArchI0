@@ -183,6 +183,82 @@ initpacmanupd && installArchI0 && sleep 1
 #################################################################################################
 #######################################2ND PART##################################################
 ######### Programs Installations : START :  ##########################
+
+# Install Okular
+function installokular {
+  echo
+  echo -e " Currently Installing ${b}Okular${enda}"
+  echo -e " ${bu}Okular is a free partition editor for 
+  graphically managing your disk partitions.
+ Read more about it here: ${b}https://okular.kde.org/${endc}"
+  echo && echo -en " ${y}Press Enter To Continue${endc}"
+  read input
+  echo -e " Installing ${b}Okular${enda}"
+  xterm -e pacman -S --noconfirm okular
+  echo -e " ${b}Okular${enda} Was Successfully Installed"
+  echo && echo -e " Run Okular From The ${b}Office${enda} Menu "
+  echo -en " ${y}Press Enter To Return To Menu${endc}"
+  echo
+  read input
+}
+
+# Install Gparted
+function installgparted {
+  echo
+  echo -e " Currently Installing ${b}GParted${enda}"
+  echo -e " ${bu}GParted is a free partition editor for 
+  graphically managing your disk partitions.
+ Read more about it here: ${b}https://gparted.org/${endc}"
+  echo && echo -en " ${y}Press Enter To Continue${endc}"
+  read input
+  echo -e " Installing ${b}GParted${enda}"
+  xterm -e pacman -S --noconfirm gparted
+  echo -e " ${b}Gparted${enda} Was Successfully Installed"
+  echo -en " ${y}Press Enter To Return To Menu${endc}"
+  echo
+  read input
+}
+
+
+# Install Clementine
+function installclementine {
+  echo
+  echo -e " Currently Installing ${b}Clementine${enda}"
+  echo -e " ${bu}Clementine is a free and open-source audio player. 
+  It is a port of Amarok 1.4 to the Qt 4 framework and the GStreamer
+  multimedia framework
+ Read more about it here: ${b}https://www.clementine-player.org/${endc}"
+  echo && echo -en " ${y}Press Enter To Continue${endc}"
+  read input
+  echo -e " Installing ${b}Clementine${enda}"
+  xterm -e pacman -S --noconfirm clementine
+  echo -e " ${b}Clementine${enda} Was Successfully Installed"
+  echo && echo " Run Clementine From ${b}Multimedia${endc}"
+  echo -en " ${y}Press Enter To Return To Menu${endc}"
+  echo
+  read input
+}
+
+# Install Geary
+function installgeary {
+  echo
+  echo -e " Currently Installing ${b}Geary${enda}"
+  echo -e " ${bu}Geary is a free and open-source email client 
+  written in Vala and based on WebKitGTK. Although since adopted
+  by the GNOME project.
+ Read more about it here: ${b}https://wiki.gnome.org/Apps/Geary${endc}"
+  echo && echo -en " ${y}Press Enter To Continue${endc}"
+  read input
+  echo -e " Installing ${b}Geany${enda}"
+  xterm -e pacman -S --noconfirm geany
+  echo -e " ${b}Geany${enda} Was Successfully Installed"
+  echo && echo " Run geany From ${b}Internet${endc}"
+  echo -en " ${y}Press Enter To Return To Menu${endc}"
+  echo
+  read input
+}
+
+
 # Install Emacs
 function installemacs {
   echo
@@ -1931,11 +2007,11 @@ function showchat {
   showlogo
   echo -e " ${b}[ CHAT APPLICATIONS ]${enda}"
   echo -e "Make A Choice
-        1)    xChat
-        2)    Claws Mail
-        3)    Kmail
-        4)    HexChat
-        5)    Quassel
+        1)    Claws Mail
+        2)    Kmail
+        3)    HexChat
+        4)    Quassel
+        5)    Geany Mail 
        ---------------------------
         q)    Return To R00T MENU"
   echo
@@ -1946,6 +2022,7 @@ function showchat {
   2) installkmail ;;
   3) installhexchat ;;
   4) installquassel ;;
+  5) installgeary ;;
   q) sleep 1 ;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showchat ;;
   esac
@@ -2039,6 +2116,7 @@ function showaudio {
         7)    Sweep (Recorder & Live Playback)
         8)    VLC
         9)    Pulse Audio
+        10)   Clementine (Player)
        ---------------------------
         q)    Return To R00T MENU"
   echo
@@ -2054,6 +2132,7 @@ function showaudio {
   7) installsweep ;;
   8) installvlc ;;
   9) installpulse ;;
+  10) installclementine ;;
   q) sleep 1 ;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showaudio ;;
   esac
@@ -2192,6 +2271,8 @@ function showothapps {
         14)   LibreOffice
         15)   HardInfo (system information tool)
         16)   Virtual Box
+        17)   GParted
+        18)   Okular (Reader)
        ---------------------------
         q)    Return To R00T MENU"
   echo
@@ -2214,6 +2295,8 @@ function showothapps {
   14) installlibreoffi ;;
   15) installhrdinfo ;;
   16) installvirtualbox ;;
+  17) installgparted ;;
+  18) installokular ;;
   q) sleep 1 ;;
   *) echo " \"$option\" Is Not A Valid Option"; sleep 1; showothapps ;;
   esac
