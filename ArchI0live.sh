@@ -29,7 +29,7 @@ if [ ! -e "/usr/bin/ArchI0" ];then
 	echo -en "\e[32m[-] : Script is not installed. Do you want to install it ? (Y/N) !\e[0m"
 	read install
 	if [[ $install = Y || $install = y ]] ; then
-		xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/installed/ArchI0.sh -O /usr/bin/ArchI0
+		xterm -e wget https://raw.githubusercontent.com/SifoHamlaoui/ArchI0/master/Files/ArchI0.sh -O /usr/bin/ArchI0
 		chmod +x /usr/bin/ArchI0
 		echo "Script should now be installed. Launching it !"
 		sleep 3
