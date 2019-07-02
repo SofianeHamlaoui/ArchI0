@@ -1,89 +1,88 @@
-# ArchI0
-### ArchI0 : ArchLinux Applications Automatic Installation Script
-### This script Is under GPLv3 License
+# 3AIS 2.0
+> 3AIS : ArchLinux Applications Automatic Installation Script
 
-### Before starting
-   Thank's To Everyone who Will support or help me or share my script
-### Screenshots : 
-![first born](https://i.imgur.com/HVNYCDL.png)
-![1](https://i.imgur.com/LbLu9ww.png)
-![2](https://i.imgur.com/RguNRLU.png)
-![3](https://i.imgur.com/BdUHzjR.png)
-![4](https://i.imgur.com/zxeFE8v.png)
-![5](https://i.imgur.com/yUGBOgL.png)
 
-### ./How the Script works ? 
-   * [Full Explanation](https://pastebin.com/raw/7XiBkskg)
+90 'Easy-to-install' Arch Linux Programs on 8 Categories
+(Thanks to the KAAIS script developer)
 
-### ./How do i got the idea ? 
-   From KAAISv3 script And Big thank To the developer
+![1](https://i.imgur.com/Gu9Dmxj.png)
 
-### ./How did I choose the Applications ? 
+![2](https://i.imgur.com/I87grkY.png)
 
-   i got the Applications from {Archlinux ALL APPLICATIONS List } { Gnome Applications} {KDE Applications } { XFCE Applications }
-   
-### ./How i organise them and execute them ?
-### 1. First before adding the program i check it first , i install it on my laptop and try it ( if there is no bugs or errors ) 
+![3](https://i.imgur.com/QvvKoOj.png)
 
-### 2. I Add the program to the list and add its own installation function
- 
-### 3. I google the program for some short descriptions
 
-### 4. I add the program installation command + short descriptions + shorted link to the website or full documentation of the program
-   
-### ./Why Using Shorted Links? 
-Yeah, i use it to see how much people are downloading and caring about my script ,  you can check it or scan it or do whatever you want.
-   
-### ./why all of those commands at the beggining of the script ? 
+## Installation
 
-the commands are here : https://pastebin.com/raw/Ss2K36s2 .
-Or you can check them on the script directly
 
-1st one => to download figlet , cuz the script logo is shown using figlet 
+```sh
+git clone https://github.com/SofianeHamlaoui/3AIS.git & cd 3AIS
+chmod +x ./3AISlive.sh
+./3AISlive.sh
+```
 
-2nd one => leafpad to open the License File : https://github.com/SifoHamlaoui/ArchI0/License
+## How ?
+* Applications :  
 
-3rd one => installing wget to download the required files from sourceforge
+`
+I got the Applications from {Archlinux ALL APPLICATIONS List } { Gnome Applications} {KDE Applications } { XFCE Applications } , I added the most used applications after checking the dailyused apps Archlinux users like.
+`
 
-4th and 5th one => to download and open the License File on leafpad
+* Installation : 
 
-6th one to remove the License File After Reading it 
+`
+You can install 20 apps using yaout ( from AUR ) and 70 using pacman ( total of 90 )
+`
 
-### ./why archicheck function ? 
+## Why ?
 
-Yeah , cuz Arch Linux x64 Architecture Need the multilab activated on the pacman.conf file 
-   , to install some softwares like skype .... .
-   and for installing yaourt :D The Best part of the party :D ( To use the Arch User Repo , AUR )
-   
-### ./Why installing the script ? 
-To Skip The Commands everytime ,and use it directly from the terminal by typing 'ArchI0'.
-   it's your choice to install it or not     
-   
-### ./why executing as ROOT ? 
 
-the script need's the root privileges to install and make the updates for the softwares
+* Achicheck function  :
 
-### ./Why Using 2 Scripts ? { ArchI0live And ArchI0 }
-Yeah , the live one is to use it without installation { in this case } the script will install the required programs
-and ask for the script installation { in case you change your mind }
-  
-### PS : In The ArchI0live I removed The First Commands cuz if some one installed the script means the required programs are already installed , so no need to REinstall them. That's it  , The choice is yours
 
-## ./Why making this script ? 
+`To enable the multilib repositories on the pacman.conf file , so you can run 32 bit applications on your x86_64 system ( wine , skype .... )`
 
-### 1- First , my goal is to add this script to the official Archlinux Distro , Waiting Dreams to become TRUE
 
-### 2- 2ndly , cuz i'm an ArchLinux User And i was noob user also , I got lot of problems and difficults on installing programs and tools , so why not making a life-easier tool for the Archlinux users.
+* Installing the script : 
 
-### ./What Are the Features of this script ?
-1-  Easy To use 
-2- Have 90 Easy-to-install Arch Linux Programs on 8 Categories
 
-## ./How can You help me ? 
-you know ? i don't need any money or donation or something like that.
-just if you have any problem on the script contact me on Facebook [Facebook:Sifo Hamlaoui](https://www.facebook.com/S1fo.Hamlaoui) or here : ArchI0.sh.dev@gmail.com
-### .
+`To use 3AIS from terminal directly with the command '3AIS' `
 
-And what do you think if i make the script autoupdated Every 4 weeks ? 
-Waiting your answers here : ArchI0.sh.dev@gmail.com
+* Executing as ROOT : 
 
+`The script need's the root privileges to install and make the updates for the softwares`
+
+
+* Using 2 scripts : {3AISlive & 3AIS}
+
+` 
+The live one is to use it without installation { in this case } the script will install the required programs and ask for the script installation { in case you change your mind }
+`
+* This script ? 
+`
+I'm an ArchLinux user , I got lot of problems and difficults on installing programs and tools the first time using archlinux , so why not making a life-easier tool for the Archlinux users <3 .
+`
+
+## Meta
+
+Sofiane Hamlaoui – [Facebook:Sifo Hamlaoui](https://www.facebook.com/S1fo.Hamlaoui) – ArchI0.sh.dev@gmail.com
+
+Distributed under the GPL-3.0 license. See ``LICENSE`` for more information.
+
+[https://github.com/SofianeHamlaoui/3AIS](https://github.com/SofianeHamlaoui/)
+
+## Contributing
+
+1. Fork it (<https://github.com/SofianeHamlaoui/3AIS/fork>)
+2. Create your feature branch
+3. Commit your changes 
+4. Push to the branch 
+5. Create a new Pull Request
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
