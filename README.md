@@ -5,11 +5,11 @@
 90 'Easy-to-install' Arch Linux Programs on 8 Categories
 (Thanks to the KAAIS script developer)
 
-![1](https://i.imgur.com/Gu9Dmxj.png)
+![1](https://i.imgur.com/9kAqxAS.png)
 
-![2](https://i.imgur.com/I87grkY.png)
+![2](https://i.imgur.com/qyvkUcw.png)
 
-![3](https://i.imgur.com/QvvKoOj.png)
+![3](https://i.imgur.com/TiWowOg.png)
 
 
 ## Installation
