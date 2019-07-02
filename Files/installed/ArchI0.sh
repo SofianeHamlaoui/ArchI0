@@ -27,7 +27,7 @@ spath="$( cd "$( dirname $0 )" && pwd )"
 # archio Logo
 function showlogo {
   clear
-figlet -c -f slant "ArchI0 v1.2"
+figlet -c -f slant "ArchI0 v2.0"
 echo -e "This script Is under GPLv3 License"
     echo
 }
@@ -46,14 +46,25 @@ function checkroot {
   fi
 }
 
+#Adding ArchlinuxFr repo
+function yaourtadd {
+  echo -en " ${y} Do you want to use Yaourt ?( To install apps from AUR ){Yes/No}${endc} "
+  read option
+  case $option in
+  Yes) xterm -e printf "[archlinuxfr]\nSigLevel = Required DatabaseOptional TrustedOnly\nServer = http://repo.archlinux.fr/$arch\n" >> /etc/pacman.conf ; sleep 1;;
+  No) sleep 1;;
+  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; initpacmanupd ;;
+  esac
+}
+
 # Initial pacman -Syu
 function initpacmanupd {
   echo; echo " Updating ..... "; xterm -e pacman -Syu --noconfirm   ; echo "Update Completed"; sleep 1;
 }
 # Script Initiation
 showlogo && echo -e " ${y} Preparing To Run Script${endc}"
-checkroot && archicheck && sleep 1
-initpacmanupd && installarchi0 && sleep 1
+checkroot && archicheck && yaourtadd && sleep 1
+initpacmanupd && installArchI0 && sleep 1
 
 # Install Emacs
 function installemacs {
@@ -2052,7 +2063,7 @@ function showabout {
     #    Arch Applications Automatic Installation Script      #
     ###########################################################
     #    -- Op-System: Arch Linux World <3                    #
-    #    -- Version: v1.2 08/05/2018                          #
+    #    -- Version: v2.0 08/05/2018                          #
     #    -- Developer: Sifo Hamlaoui                          #
     #    -- Thanks: No One                                    #
     ###########################################################
@@ -2062,14 +2073,14 @@ function showabout {
    A Fresh Install Of ArchLinux , Saving Time To Use It.
    On This Script I Added All The Softwares From The Full List Of Archlinux Applications,
    check it here :  https://goo.gl/xfdnQm
-   The Script Have Exactly ( v1.2 ) 90 Arch Linux Programs .
+   The Script Have Exactly ( v2.0 ) 90 Arch Linux Programs .
    ${r}Ps:This script Is Like The KAAISv3 Script but for Arch Linux And More Developed :D${endc}
     "
   echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
   read input
 }
 
-# Exit archI0
+# Exit ArchI0
 function archioexit {
   showlogo && echo -e " Thank You For Using ${b} ArchI0 Script ${enda}
  For More Information Send Me An Email : :
