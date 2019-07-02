@@ -16,7 +16,7 @@
 
 
 ```sh
-git clone https://github.com/SofianeHamlaoui/ArchI0.git & cd ArchI0
+git clone https://github.com/SofianeHamlaoui/ArchI0.git && cd ArchI0
 chmod +x ./ArchI0live.sh
 ./ArchI0live.sh
 ```
