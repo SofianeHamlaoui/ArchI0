@@ -31,7 +31,7 @@ I got the Applications from {Archlinux ALL APPLICATIONS List } { Gnome Applicati
 * Installation : 
 
 `
-You can install 20 apps using yaout ( from AUR ) and 70 using pacman ( total of 90 )
+You can install 20 apps using yaourt ( from AUR ) and 70 using pacman ( total of 90 )
 `
 
 ## Why ?
