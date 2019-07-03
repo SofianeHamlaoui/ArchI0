@@ -169,7 +169,7 @@ sleep 2
 #The license
 function licensee {
 
-xterm -e wget https://raw.githubusercontent.com/SofianeHamlaouiHamlaoui/ArchI0/master/License
+xterm -e wget https://raw.githubusercontent.com/SofianeHamlaoui/ArchI0/master/License
 xterm -e leafpad License
 xterm -e rm License
 }
