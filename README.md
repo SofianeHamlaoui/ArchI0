@@ -1,6 +1,6 @@
 # ArchI0 2.2
 > ArchI0 : ArchLinux Applications Automatic Installation Script
-## ArchI0 2.2 is OUT! ,check <a href="release_notes.md">The release notes</a> to see what is NEW.
+## ArchI0 2.2 is OUT! ,check <a href="release_notes.md">The release notes</a> to see what is NEW .
 
 Install scripts can be super useful for rapid deployment of custom systems , So this script is meant to help users install their favourite applications on a fresh install of ArchLinux , Saving time to use it. On this script I added the most-used/frequent softwares used by the Archlinux Community.
 (Thanks to the KAAIS script developer)
