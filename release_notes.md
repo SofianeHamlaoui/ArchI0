@@ -9,6 +9,7 @@
 - One script ready to use and instal 
 - Adding Yay and removing Yaourt
 - More Apps added to the script
+- 75 Apps Installable with pacman , 19 Apps with Yay 
 
 # Bug Fixes and Changes/Minor Features
 - Removed xterm use ( Completly ) 
