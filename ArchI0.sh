@@ -37,7 +37,7 @@ if [ ! -e "/usr/bin/ArchI0" ];then
 		wget https://raw.githubusercontent.com/SofianeHamlaoui/ArchI0/master/ArchI0.sh -O /usr/bin/ArchI0
 		chmod +x /usr/bin/ArchI0
 		echo "Script should now be installed. Launching it !"
-		sleep 2
+		sleep 1
     echo "You can run the script anytime by typing 'ArchI0' on the Terminal"
     sleep 2
 		ArchI0
@@ -75,7 +75,7 @@ echo """
 /    |    \ |  | \/\  \___ |   Y  \|   |\  \_/   \  \   / /       \     |   |
 \____|__  / |__|    \___  >|___|  /|___| \_____  /   \_/  \_______ \ /\ |___|
         \/              \/      \/             \/                 \/ \/      
-        This script Is under GPLv3 License
+        Sofiane Hamlaoui | 2019
 """;
     echo
 }
@@ -97,9 +97,8 @@ function checkroot {
 
 # Initial pacman -Syu
 function initpacmanupd {
-  showlogo && sleep 1
-  echo; echo -e " Updating ..... | Please stop any install process before updating  "; 
-  echo
+  echo ""
+  echo; echo -e "\033[1m Updating ..... \e[0m\E[31m| Please stop any install process before updating\e[0m"; 
   echo
   pacman -Syu --noconfirm; 
   echo "Update Completed"; 
@@ -120,7 +119,7 @@ echo [!]::[please wait]: Installing Yay ..  ;
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si 
 echo ""
 fi
-sleep 2
+sleep 1
 }
 
 
@@ -136,7 +135,7 @@ echo [!]::[please wait]: Installing Git ..  ;
 pacman -S Git --noconfirm
 echo ""
 fi
-sleep 2
+sleep 1
 }
 
 function checkwget {
@@ -152,7 +151,7 @@ pacman -S --noconfirm wget
 echosleep 2
 echo ""
 fi
-sleep 2
+sleep 1
 
 }
 
@@ -160,8 +159,7 @@ sleep 2
 checkroot && sleep 1
 checkwget && checkyay && checkgit && sleep 1
 showlogo && echo -e " ${y} Preparing To Run ${b}ArchI0${endc}"
-archicheck && sleep 1
-initpacmanupd && clear && installArchI0 && sleep 1
+archicheck && initpacmanupd && clear && installArchI0 && sleep 1
 #################################################################################################
 #######################################2ND PART##################################################
 ######### Programs Installations : START :  ##########################
