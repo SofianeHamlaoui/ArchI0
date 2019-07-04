@@ -8,6 +8,10 @@
 #                (Give EXEC Access To Script)            #
 #  +TO RUN    : sudo ./ArchI0live.sh                       #
 ##########################################################
+
+
+
+
 # Variables
 b='\033[1m'
 u='\033[4m'
@@ -23,6 +27,7 @@ endc='\E[0m'
 enda='\033[0m'
 spath="$( cd "$( dirname $0 )" && pwd )"
 ######################################1ST PART###################################################
+
 #Install script if not installed
 function installArchI0 {
 if [ ! -e "/usr/bin/ArchI0" ];then
@@ -48,13 +53,13 @@ fi
 
 #Cheking Os Architecture
 function archicheck {
-  echo -en " ${y} What Is Your OS Architecture? {32/64}${endc} "
-  read option
-  case $option in
-  32) xterm -e sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf ; sleep 1;;
-  64) xterm -e sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf ; sleep 1;;
-  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; initpacmanupd ;;
-  esac
+if [[ $(uname -m ) = x86_64 ]]; then
+  sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf  
+else
+	sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
+fi
+
+
 }
 
 
@@ -63,29 +68,38 @@ function yaourtadd {
   echo -en " ${y} Do you want to use Yaourt ?( To install apps from AUR ){Yes/No}${endc} "
   read option
   case $option in
-  Yes) xterm -e printf "[archlinuxfr]\nSigLevel = Required DatabaseOptional TrustedOnly\nServer = http://repo.archlinux.fr/$arch\n" >> /etc/pacman.conf ; sleep 1;;
+  Yes) printf "\n[archlinuxfr]\nSigLevel = Required DatabaseOptional TrustedOnly\nServer = http://repo.archlinux.fr/$arch" >> /etc/pacman.conf ; sleep 1;;
   No) sleep 1;;
-  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; initpacmanupd ;;
+  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; yaourtadd ;;
   esac
 }
 
 # archio Logo
 function showlogo {
   clear
-figlet -c -f slant "ArchI0 v2.0"
-echo -e "This script Is under GPLv3 License"
+
+echo """
+
+   _____                   .__     .___ _______           ________      ____ 
+  /  _  \  _______   ____  |  |__  |   |\   _  \   ___  __\_____  \    /_   |
+ /  /_\  \ \_  __ \_/ ___\ |  |  \ |   |/  /_\  \  \  \/ / /  ____/     |   |
+/    |    \ |  | \/\  \___ |   Y  \|   |\  \_/   \  \   / /       \     |   |
+\____|__  / |__|    \___  >|___|  /|___| \_____  /   \_/  \_______ \ /\ |___|
+        \/              \/      \/             \/                 \/ \/      
+        This script Is under GPLv3 License
+""";
     echo
 }
 
 # ROOT User Check
 function checkroot {
+  showlogo && sleep 1
   if [[ $(id -u) = 0 ]]; then
     echo -e " Checking For ROOT: ${g}PASSED${endc}"
   else
     echo -e " Checking For ROOT: ${r}FAILED${endc}
  ${y}This Script Needs To Run As ROOT${endc}"
     echo -e " ${b}ArchI0live.sh${enda} Will Now Exit"
-    rm License
     echo
     sleep 1
     exit
@@ -94,8 +108,11 @@ function checkroot {
 
 # Initial pacman -Syu
 function initpacmanupd {
-  echo; echo -e " Updating ..... | please stop any install process before updating  "; 
-  xterm -e pacman -Syu --noconfirm; 
+  showlogo && sleep 1
+  echo; echo -e " Updating ..... | Please stop any install process before updating  "; 
+  echo
+  echo
+  pacman -Syu --noconfirm; 
   echo "Update Completed"; 
   sleep 1;
 }
@@ -118,37 +135,6 @@ sleep 2
 
 }
 
-function checkfiglet {
-	which figlet > /dev/null 2>&1
-	if [ "$?" -eq "0" ]; then
-	echo [✔]::[Figlet]: installation found!;
-else
-
-echo [x]::[warning]:this script require Figlet ;
-echo ""
-echo [!]::[please wait]: Installing Figlet .. ;
-xterm -e pacman -S --noconfirm figlet
-echo ""
-fi
-sleep 2
-
-}
-function checkleafpad {
-	which leafpad > /dev/null 2>&1
-	if [ "$?" -eq "0" ]; then
-	echo [✔]::[Leafpad]: installation found!;
-else
-
-echo [x]::[warning]:this script require Leafpad ;
-echo ""
-echo [!]::[please wait]: Installing Leafpad .. ;
-xterm -e pacman -S --noconfirm leafpad
-echo ""
-fi
-sleep 2
-
-}
-
 function checkwget {
 	which wget > /dev/null 2>&1
 	if [ "$?" -eq "0" ]; then
@@ -158,7 +144,7 @@ else
 echo [x]::[warning]:this script require wget ;
 echo ""
 echo [!]::[please wait]: Installing Wget ;
-xterm -e pacman -S --noconfirm wget
+pacman -S --noconfirm wget
 echosleep 2
 echo ""
 fi
@@ -166,20 +152,12 @@ sleep 2
 
 }
 
-#The license
-function licensee {
-
-xterm -e wget https://raw.githubusercontent.com/SofianeHamlaoui/ArchI0/master/License
-xterm -e leafpad License
-xterm -e rm License
-}
-
 # Script Initiation
 checkroot && sleep 1
-checkxterm && checkleafpad && checkfiglet && checkwget && licensee && sleep 1
-showlogo && echo -e " ${y} Preparing To Run Script${endc}"
+checkxterm && checkwget && sleep 1
+showlogo && echo -e " ${y} Preparing To Run ${b}ArchI0${endc}"
 archicheck && yaourtadd && sleep 1
-initpacmanupd && installArchI0 && sleep 1
+initpacmanupd && clear && installArchI0 && sleep 1
 #################################################################################################
 #######################################2ND PART##################################################
 ######### Programs Installations : START :  ##########################
