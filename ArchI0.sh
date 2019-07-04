@@ -4,9 +4,9 @@
 #                 ArchI0 script                            #
 #  ArchLinux Applications Automatic Installation Script  #
 ##########################################################
-#  +FIRST  : sudo chmod +x ArchI0live.sh                   #
+#  +FIRST  : sudo chmod +x ArchI0.sh                   #
 #                (Give EXEC Access To Script)            #
-#  +TO RUN    : sudo ./ArchI0live.sh                       #
+#  +TO RUN    : sudo ./ArchI0.sh                       #
 ##########################################################
 
 
@@ -99,7 +99,7 @@ function checkroot {
   else
     echo -e " Checking For ROOT: ${r}FAILED${endc}
  ${y}This Script Needs To Run As ROOT${endc}"
-    echo -e " ${b}ArchI0live.sh${enda} Will Now Exit"
+    echo -e " ${b}ArchI0.sh${enda} Will Now Exit"
     echo
     sleep 1
     exit
@@ -2391,7 +2391,7 @@ function showabout {
     #    Arch Applications Automatic Installation Script      #
     ###########################################################
     #    -- Op-System: Arch Linux World <3                    #
-    #    -- Version: v2.0 08/05/2018                          #
+    #    -- Version: v2.1 04/07/2019                          #
     #    -- Developer: Sofiane Hamlaoui                       #
     #    -- Thanks: No One                                    #
     ###########################################################
@@ -2401,7 +2401,7 @@ function showabout {
    A Fresh Install Of ArchLinux , Saving Time To Use It.
    On This Script I Added All The Softwares From The Full List Of Archlinux Applications,
    check it here :  https://goo.gl/xfdnQm
-   The Script Have Exactly ( v2.0 ) 90 Arch Linux Programs .
+   The Script Have Exactly ( v2.1 ) 94 Arch Linux Programs .
    ${r}Ps:This script Is Like The KAAISv3 Script but for Arch Linux And More Developed :D${endc}
     "
   echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
