@@ -2,7 +2,7 @@
 > ArchI0 : ArchLinux Applications Automatic Installation Script
 
 
-90 'Easy-to-install' Arch Linux Programs on 8 Categories
+Install scripts can be super useful for rapid deployment of custom systems , So this script is meant to help users install their favourite applications on a fresh install of ArchLinux , Saving time to use it. On this script I added the most-used/frequent softwares used by the Archlinux Community.
 (Thanks to the KAAIS script developer)
 
 ![1](https://i.imgur.com/9kAqxAS.png)
@@ -55,8 +55,8 @@ You can install 20 apps using yaourt ( from AUR ) and 70 using pacman ( total of
 
 * This script ? 
 `
-Install scripts can be super useful for rapid deployment of custom systems , So this script is meant to help users install their favourite applications on a fresh install of ArchLinux , Saving time to use it. On this script I added all the softwares from the Full List Of Archlinux Applications.
-Also , I'm an ArchLinux user . I got lot of problems and difficults on installing programs and tools on my first time using ArchLinux , so why not making a life-easier tool for the Archlinux users <3 .
+
+As an ArchLinux user . I got lot of problems and difficults on installing programs and tools on my first time using ArchLinux , so why not making a life-easier tool for the Archlinux users <3 .
 
 `
 
