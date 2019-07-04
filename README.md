@@ -56,10 +56,9 @@ You can install 20 apps using yaourt ( from AUR ) and 70 using pacman ( total of
 
 
 * This script ? 
+
 `
-
 As an ArchLinux user . I got lot of problems and difficults on installing programs and tools on my first time using ArchLinux , so why not making a life-easier tool for the Archlinux users <3 .
-
 `
 
 ## Meta
