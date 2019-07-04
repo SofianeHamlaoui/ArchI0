@@ -5,11 +5,13 @@
 Install scripts can be super useful for rapid deployment of custom systems , So this script is meant to help users install their favourite applications on a fresh install of ArchLinux , Saving time to use it. On this script I added the most-used/frequent softwares used by the Archlinux Community.
 (Thanks to the KAAIS script developer)
 
-![1](https://i.imgur.com/9kAqxAS.png)
+![1](https://i.imgur.com/N3c4TYl.png)
 
-![2](https://i.imgur.com/qyvkUcw.png)
+![2](https://i.imgur.com/0q5Om9J.png)
 
-![3](https://i.imgur.com/TiWowOg.png)
+![3](https://i.imgur.com/hY3ht9x.png)
+
+![4](https://i.imgur.com/Ayjp1hS.png)
 
 
 ## Installation
