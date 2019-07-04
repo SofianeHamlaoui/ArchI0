@@ -1,4 +1,4 @@
-# ArchI0 2.0
+# ArchI0 2.1
 > ArchI0 : ArchLinux Applications Automatic Installation Script
 
 
@@ -17,8 +17,8 @@
 
 ```sh
 git clone https://github.com/SofianeHamlaoui/ArchI0.git && cd ArchI0
-chmod +x ./ArchI0live.sh
-./ArchI0live.sh
+chmod +x ./ArchI0.sh
+./ArchI0.sh
 ```
 
 ## How ?
@@ -53,14 +53,11 @@ You can install 20 apps using yaourt ( from AUR ) and 70 using pacman ( total of
 `The script need's the root privileges to install and make the updates for the softwares`
 
 
-* Using 2 scripts : {ArchI0live & ArchI0}
-
-` 
-The live one is to use it without installation { in this case } the script will install the required programs and ask for the script installation { in case you change your mind }
-`
 * This script ? 
 `
-I'm an ArchLinux user , I got lot of problems and difficults on installing programs and tools the first time using archlinux , so why not making a life-easier tool for the Archlinux users <3 .
+Install scripts can be super useful for rapid deployment of custom systems , So this script is meant to help users install their favourite applications on a fresh install of ArchLinux , Saving time to use it. On this script I added all the softwares from the Full List Of Archlinux Applications.
+Also , I'm an ArchLinux user . I got lot of problems and difficults on installing programs and tools on my first time using ArchLinux , so why not making a life-easier tool for the Archlinux users <3 .
+
 `
 
 ## Meta
