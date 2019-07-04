@@ -63,19 +63,7 @@ fi
 
 }
 
-
-#Adding ArchlinuxFr repo
-function yaourtadd {
-  echo -en " ${y} Do you want to use Yaourt ?( To install apps from AUR ){Yes/No}${endc} "
-  read option
-  case $option in
-  Yes) printf "\n[archlinuxfr]\nSigLevel = Required DatabaseOptional TrustedOnly\nServer = http://repo.archlinux.fr/$arch" >> /etc/pacman.conf ; sleep 1;;
-  No) sleep 1;;
-  *) echo " \"$option\" Is Not A Valid Option"; sleep 1; yaourtadd ;;
-  esac
-}
-
-# archio Logo
+# ArchI0 Logo
 function showlogo {
   clear
 
@@ -120,20 +108,35 @@ function initpacmanupd {
 
 # Requirements Check 
 
-function checkxterm {
-	which xterm > /dev/null 2>&1
+function checkyay {
+  which yay > /dev/null 2>&1
 	if [ "$?" -eq "0" ]; then
-	echo [✔]::[Xterm]: installation found!;
+	echo [✔]::[Yay]: installation found!;
 else
 
-echo [x]::[warning]:this script require Xterm ;
+echo [x]::[warning]:this script require Yay ;
 echo ""
-echo [!]::[please wait]: Installing Xterm ..  ;
-pacman -S xterm --noconfirm
+echo [!]::[please wait]: Installing Yay ..  ;
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si 
 echo ""
 fi
 sleep 2
+}
 
+
+function checkgit {
+	which git > /dev/null 2>&1
+	if [ "$?" -eq "0" ]; then
+	echo [✔]::[Git]: installation found!;
+else
+
+echo [x]::[warning]:this script require Git ;
+echo ""
+echo [!]::[please wait]: Installing Git ..  ;
+pacman -S Git --noconfirm
+echo ""
+fi
+sleep 2
 }
 
 function checkwget {
@@ -155,9 +158,9 @@ sleep 2
 
 # Script Initiation
 checkroot && sleep 1
-checkxterm && checkwget && sleep 1
+checkwget && checkyay && checkgit && sleep 1
 showlogo && echo -e " ${y} Preparing To Run ${b}ArchI0${endc}"
-archicheck && yaourtadd && sleep 1
+archicheck && sleep 1
 initpacmanupd && clear && installArchI0 && sleep 1
 #################################################################################################
 #######################################2ND PART##################################################
@@ -672,7 +675,7 @@ function installchrome {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Chrome${enda}"
-    xterm -e yaourt --noconfirm google-chrome
+    yay -S google-chrome
   echo -e " ${b}Chrome${enda} Was Successfully Installed"
   echo && echo -e " Run Chrome From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -724,7 +727,7 @@ function installskype {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Skype${enda}"
-  xterm -e yaourt -S skype --noconfirm
+  yay -S skype
   echo -e " ${b}Skype${enda} Was Successfully Installed"
   echo && echo -e " Run Skype From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -748,7 +751,7 @@ function installteamviewer {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Teamviewer${enda}"
-  xterm -e yaourt -S teamviewer --noconfirm
+  yay -S teamviewer 
   echo -e " ${b}Teamviewer${enda} Was Successfully Installed"
   echo && echo -e " Run Teamviewer From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -962,7 +965,7 @@ function installytgui  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Youtube Downloader (Gui)${enda}"
-  xterm -e yaourt -S youtube-dl-gui-git --noconfirm
+  yay -S youtube-dl-gui-git 
   echo -e " ${b}Youtube Downloader (Gui)${enda} Was Successfully Installed"
   echo && echo -e " Run Youtube Downloader (Gui) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -980,7 +983,7 @@ function installice  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}GNU IceCat (Iceweasel)${enda}"
-  xterm -e yaourt -S iceweasel --noconfirm
+  yay -S iceweasel 
   echo -e " ${b}GNU IceCat (Iceweasel)${enda} Was Successfully Installed"
   echo && echo -e " Run GNU IceCat (Iceweasel) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1033,7 +1036,7 @@ function installvivaldi  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}vivaldi${enda}"
-  xterm -e yaourt -S vivaldi --noconfirm
+  yay -S vivaldi 
   echo -e " ${b}vivaldi${enda} Was Successfully Installed"
   echo && echo -e " Run vivaldi From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1260,7 +1263,7 @@ function installdiscord  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Discord${enda}"
-  xterm -e yaourt -S discord --noconfirm
+  yay -S discord
   echo -e " ${b}Discord${enda} Was Successfully Installed"
   echo && echo -e " Run Discord From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1280,7 +1283,7 @@ function installarmory  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Armory${enda}"
-  xterm -e yaourt -S  armory-git --noconfirm
+  yay -S  armory-bin
   echo -e " ${b}Armory${enda} Was Successfully Installed"
   echo && echo -e " Run Armory From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1456,7 +1459,7 @@ function installatom  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Atom${enda}"
-  xterm -e yaourt --noconfirm atom
+  yay -S atom
   echo -e " ${b}Atom${enda} Was Successfully Installed"
   echo && echo -e " Run Atom From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1492,7 +1495,7 @@ function installaptana  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Aptana Studio${enda}"
-  xterm -e yaourt -S aptana-studio --noconfirm
+  yay -S aptana-studio 
   echo -e " ${b}Aptana Studio${enda} Was Successfully Installed"
   echo && echo -e " Run Aptana Studio From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1526,7 +1529,7 @@ function installbluej  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Bluej${enda}"
-  xterm -e yaourt --noconfirm Bluej
+  yay -S bluej
   echo -e " ${b}Bluej${enda} Was Successfully Installed"
   echo && echo -e " Run Bluej From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1545,7 +1548,7 @@ function installbrackets  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Brackets${enda}"
-  xterm -e yaourt -S brackets --noconfirm
+  yay -S brackets 
   echo -e " ${b}Brackets${enda} Was Successfully Installed"
   echo && echo -e " Run Brackets From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1584,7 +1587,7 @@ function installcloud9 {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Cloud9${enda}"
-  xterm -e yaourt  -S c9.core --noconfirm
+  yay -S c9.core 
   echo -e " ${b}Cloud9${enda} Was Successfully Installed"
   echo && echo -e " Run Cloud9 From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1619,7 +1622,7 @@ function installeditra {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Editra${enda}"
-  xterm -e yaourt -S editra-svn --noconfirm
+  yay -S editra 
   echo -e " ${b}Editra${enda} Was Successfully Installed"
   echo && echo -e " Run Editra From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1709,7 +1712,7 @@ function installphpstorm {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}PHPStorm${enda}"
-  xterm -e yaourt -S phpstorm --noconfirm
+  yay -S phpstorm 
   echo -e " ${b}PHPStorm${enda} Was Successfully Installed"
   echo && echo -e " Run PHPStorm From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1726,7 +1729,7 @@ function installsublime {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Sublime Text${enda}"
-  xterm -e yaourt -S sublime-text sublime-text-dev --noconfirm
+  pacman -S  sublime-text sublime-text-dev
   echo -e " ${b}Sublime Text ${enda} Was Successfully Installed"
   echo && echo -e " Run Sublime Text From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1743,7 +1746,7 @@ function installvistudiocode {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Visual Studio Code${enda}"
-  xterm -e yaourt -S visual-studio-code --noconfirm
+  pacman -S code 
   echo -e " ${b}Visual Studio Code${enda} Was Successfully Installed"
   echo && echo -e " Run Visual Studio Code From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1814,7 +1817,7 @@ function installfoxread {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Foxit Reader${enda}"
-  xterm -e yaourt -S foxitreader --noconfirm
+  yay -S foxitreader
   echo -e " ${b}Foxit Reader${enda} Was Successfully Installed"
   echo && echo -e " Run Foxit Reader From The ${b}Office${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1831,7 +1834,7 @@ function installhttrack  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}HTTrack (httracqt)${enda}"
-  xterm -e yaourt -S httraqt --noconfirm
+  yay -S httraqt 
   echo -e " ${b}HTTrack (httracqt)${enda} Was Successfully Installed"
   echo && echo -e " Run HTTrack (httracqt) From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1904,7 +1907,7 @@ function installandrostu  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Android Studio${enda}"
-  xterm -e yaourt -S android-studio --noconfirm
+  yay -S android-studio 
   echo -e " ${b}Android Studio${enda} Was Successfully Installed"
   echo && echo -e " Run Android Studio From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -2392,7 +2395,7 @@ function showabout {
     #    Arch Applications Automatic Installation Script      #
     ###########################################################
     #    -- Op-System: Arch Linux World <3                    #
-    #    -- Version: v2.1 04/07/2019                          #
+    #    -- Version: v2.2 04/07/2019                          #
     #    -- Developer: Sofiane Hamlaoui                       #
     #    -- Thanks: No One                                    #
     ###########################################################
@@ -2402,7 +2405,7 @@ function showabout {
    A Fresh Install Of ArchLinux , Saving Time To Use It.
    On This Script I Added All The Softwares From The Full List Of Archlinux Applications,
    check it here :  https://goo.gl/xfdnQm
-   The Script Have Exactly ( v2.1 ) 94 Arch Linux Programs .
+   The Script Have Exactly ( v2.2 ) 94 Arch Linux Programs .
    ${r}Ps:This script Is Like The KAAISv3 Script but for Arch Linux And More Developed :D${endc}
     "
   echo && echo -en " ${yellow}Press Enter To Return To R00T MENU${endc}"
