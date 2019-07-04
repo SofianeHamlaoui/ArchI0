@@ -34,12 +34,12 @@ if [ ! -e "/usr/bin/ArchI0" ];then
 	echo -en "\e[32m[-] : Script is not installed. Do you want to install it ? (Y/N) !\e[0m"
 	read install
 	if [[ $install = Y || $install = y ]] ; then
-		xterm -e wget https://raw.githubusercontent.com/SofianeHamlaoui/ArchI0/master/ArchI0.sh -O /usr/bin/ArchI0
+		wget https://raw.githubusercontent.com/SofianeHamlaoui/ArchI0/master/ArchI0.sh -O /usr/bin/ArchI0
 		chmod +x /usr/bin/ArchI0
 		echo "Script should now be installed. Launching it !"
-		sleep 3
+		sleep 2
     echo "You can run the script anytime by typing 'ArchI0' on the Terminal"
-    sleep 3
+    sleep 2
 		ArchI0
 		exit 1
 	else
@@ -56,7 +56,8 @@ function archicheck {
 if [[ $(uname -m ) = x86_64 ]]; then
   sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf  
 else
-	sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
+  echo -e "\e[32m[-] multilab is already Enabled !\e[0m"
+	#sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf 
 fi
 
 
@@ -172,7 +173,7 @@ function installokular {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Okular${enda}"
-  xterm -e pacman -S --noconfirm okular
+  pacman -S --noconfirm okular
   echo -e " ${b}Okular${enda} Was Successfully Installed"
   echo && echo -e " Run Okular From The ${b}Office${enda} Menu "
   echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -190,7 +191,7 @@ function installgparted {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}GParted${enda}"
-  xterm -e pacman -S --noconfirm gparted
+  pacman -S --noconfirm gparted
   echo -e " ${b}Gparted${enda} Was Successfully Installed"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
   echo
@@ -209,7 +210,7 @@ function installclementine {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Clementine${enda}"
-  xterm -e pacman -S --noconfirm clementine
+  pacman -S --noconfirm clementine
   echo -e " ${b}Clementine${enda} Was Successfully Installed"
   echo && echo " Run Clementine From ${b}Multimedia${endc}"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -228,7 +229,7 @@ function installgeary {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Geany${enda}"
-  xterm -e pacman -S --noconfirm geany
+  pacman -S --noconfirm geany
   echo -e " ${b}Geany${enda} Was Successfully Installed"
   echo && echo " Run geany From ${b}Internet${endc}"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -249,7 +250,7 @@ function installemacs {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Emacs${enda}"
-  xterm -e pacman -S --noconfirm emacs
+  pacman -S --noconfirm emacs
   echo -e " ${b}Emacs${enda} Was Successfully Installed"
   echo && echo " Run Emacs From ${b}Development${endc}"
   echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -270,7 +271,7 @@ function installgedit {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}GEdit${enda}"
-  xterm -e pacman -S --noconfirm gedit
+  pacman -S --noconfirm gedit
   echo -e " ${b}GEdit${enda} Was Successfully Installed"
   echo && echo -e "Run GEdit From The ${b}Accessories${endc} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
@@ -290,7 +291,7 @@ function installgeany {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Geany${enda}"
-  xterm -e pacman -S --noconfirm geany
+  pacman -S --noconfirm geany
   echo -e " ${b}Geany${enda} Was Successfully Installed"
   echo && echo -e " Run Geany From The ${b}Development${endc} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
@@ -309,7 +310,7 @@ function installfilez {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}FileZilla${enda}"
-  xterm -e pacman -S --noconfirm filezilla
+  pacman -S --noconfirm filezilla
   echo -e " ${b}FileZilla${enda} Was Successfully Installed"
   echo && echo -e " Run FileZilla From The ${b}Internet${endc} Menu"
   echo && echo -en " ${y}Press  Enter To Return To Menu${endc}" && echo
@@ -330,7 +331,7 @@ function installgftp {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}gFTP${enda}"
-  xterm -e pacman -S --noconfirm gftp
+  pacman -S --noconfirm gftp
   echo -e " ${b}gFTP${enda} Was Successfully Installed"
   echo && echo -e " Run gFTP From The ${b}Internet${endc} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
@@ -349,7 +350,7 @@ function installtransmission {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Transmission${endc}"
-  xterm -e pacman --noconfirm transmission-qt
+  pacman --noconfirm transmission-qt
   echo -e " ${b}Transmission${enda} Was Successfully Installed"
   echo && echo -e " Run Transmission From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}" && echo
@@ -369,7 +370,7 @@ function installpinta {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Pinta${enda}"
-  xterm -e pacman -S --noconfirm pinta
+  pacman -S --noconfirm pinta
   echo -e " ${b}Pinta${enda} Was Successfully Installed"
   echo && echo -e " Run Pinta From The ${b}Graphics${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -388,7 +389,7 @@ function installgimp {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}GIMP${enda}"
-  xterm -e pacman -S --noconfirm gimp
+  pacman -S --noconfirm gimp
   echo -e " ${b}GIMP${enda} Was Successfully Installed"
   echo && echo -e " Run GIMP From The ${b}Graphics${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -411,7 +412,7 @@ function installinkscape {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Inkscape${enda}"
-  xterm -e pacman -S --noconfirm inkscape
+  pacman -S --noconfirm inkscape
   echo -e " ${b}Inkscape${enda} Was Successfully Installed"
   echo && echo -e " Run Inkscape From The ${b}Graphics${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -434,7 +435,7 @@ function installark {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Ark${enda}"
-  xterm -e pacman -S --noconfirm ark
+  pacman -S --noconfirm ark
   echo -e " ${b}Ark${enda} Was Successfully Installed"
   echo && echo -e " Run Ark From The Terminal: ${b}ark${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -451,7 +452,7 @@ function installfileroller {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}File-Roller${enda}"
-  xterm -e pacman -S --noconfirm file-roller
+  pacman -S --noconfirm file-roller
   echo -e " ${b}File-Roller${enda} Was Successfully Installed"
   echo && echo -e " Run File-Roller From The ${b}Accessories${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -472,7 +473,7 @@ function installzipunzip {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Zip/Unzip${enda}"
-  xterm -e pacman -S --noconfirm zip unzip
+  pacman -S --noconfirm zip unzip
   echo -e " ${b}Zip/Unzip${enda} Was Successfully Installed"
   echo && echo -e " Run Zip/Unzip From The Terminal: ${b}zip${enda} or ${b}unzip${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -489,7 +490,7 @@ function installrarunrar {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Rar/Unrar${enda}"
-  xterm -e pacman -S --noconfirm rar unrar
+  pacman -S --noconfirm rar unrar
   echo -e " ${b}Rar/Unrar${enda} Was Successfully Installed"
   echo && echo -e " Run Rar/Unrar From The Terminal: ${b}rar${enda} or ${b}unrar${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -515,7 +516,7 @@ function installaudacious {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Audacious${enda}"
-  xterm -e pacman -S --noconfirm audacious
+  pacman -S --noconfirm audacious
   echo -e " ${b}Audacious${enda} Was Successfully Installed"
   echo && echo -e " Run Audacious From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -534,7 +535,7 @@ function installamarok {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Amarok${enda}"
-  xterm -e pacman -S --noconfirm amarok
+  pacman -S --noconfirm amarok
   echo -e " ${b}Amarok${enda} Was Successfully Installed"
   echo && echo -e " Run Amarok From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -553,7 +554,7 @@ function installbanshee {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Banshee${enda}"
-  xterm -e pacman -S --noconfirm banshee
+  pacman -S --noconfirm banshee
   echo -e " ${b}Banshee${enda} Was Successfully Installed"
   echo && echo -e " Run Banshee From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -570,7 +571,7 @@ function installsonata {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Sonata${enda}"
-  xterm -e pacman -S --noconfirm sonata
+  pacman -S --noconfirm sonata
   echo -e " ${b}Sonata${enda} Was Successfully Installed"
   echo && echo -e " Run Sonata From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -589,7 +590,7 @@ function installaudacity {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Audacity${enda}"
-  xterm -e pacman -S --noconfirm audacity
+  pacman -S --noconfirm audacity
   echo -e " ${b}Audacity${enda} Was Successfully Installed"
   echo && echo -e " Run Audacity From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -610,7 +611,7 @@ function installardour {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Ardour${enda}"
-  xterm -e pacman -S --noconfirm ardour
+  pacman -S --noconfirm ardour
   echo -e " ${b}Ardour${enda} Was Successfully Installed"
   echo && echo -e " Run Ardour From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -631,7 +632,7 @@ function installsweep {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Sweep${enda}"
-  xterm -e pacman -S --noconfirm sweep
+  pacman -S --noconfirm sweep
   echo -e " ${b}Sweep${enda} Was Successfully Installed"
   echo && echo -e " Run Sweep From The ${b}Multimedia${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -652,7 +653,7 @@ function installchromium {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Chromium${enda}"
-    xterm -e pacman -S --noconfirm chromium
+    pacman -S --noconfirm chromium
   echo -e " ${b}Chromium${enda} Was Successfully Installed"
   echo && echo -e " Run Chromium From The ${b}Internet${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -687,7 +688,7 @@ function installytbdwn {
  Read more about it here: ${b}https://goo.gl/tzVwbD${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
-  xterm -e pacman -S --noconfirm youtube-dl
+  pacman -S --noconfirm youtube-dl
   echo -e " All ${b}Youtube Downloader${enda} Files Were Flaged For Execute Successfully"
   echo && echo -e " Run Youtube Downloader From The Terminal: ${b}youtube-dl \"http://youtube.com/watch?v=XXXXXXX${enda}\" "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -704,7 +705,7 @@ function installconnman {
   Read more about it here: ${b}https://goo.gl/W7VRFy${enda}"
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
-  xterm -e pacman -S --noconfirm connman
+  pacman -S --noconfirm connman
   echo -e " All ${b}Connman${enda} Files Were Flaged For Execute Successfully"
   echo && echo -e " Run Connman From The Terminal"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -767,7 +768,7 @@ function installopera {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Opera${enda}"
-  xterm -e pacman -S --noconfirm opera
+  pacman -S --noconfirm opera
   echo -e " ${b}Opera ${enda} Was Successfully installed"
  echo && echo -e " Run Opera Browser From The : ${b}Internet${endc} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -783,7 +784,7 @@ function installflashplugin {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Adobe Flash Player${enda}"
-  xterm -e pacman -S --noconfirm flashplugin
+  pacman -S --noconfirm flashplugin
   echo -e " ${b}Adobe Flash Player${enda} Was Successfully Installed"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
   read input
@@ -803,7 +804,7 @@ function installterminator {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Terminator${enda}"
-  xterm -e pacman -S --noconfirm terminator
+  pacman -S --noconfirm terminator
   echo -e " ${b}Terminator${enda} Was Successfully Installed"
   echo && echo -e " Run Terminator From The ${b}Accessories${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -819,7 +820,7 @@ function installgnometweaktool {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Gnome Tweak Tool${enda}"
-  xterm -e pacman -S --noconfirm gnome-tweak-tool
+  pacman -S --noconfirm gnome-tweak-tool
   echo -e " ${b}Gnome Tweak Tool${enda} Was Successfully Installed"
   echo && echo -e " Run Gnome Tweak Tool From The Terminal: ${b}gnome-tweak-tool${enda} or From ${b}System${enda} Menu"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -836,7 +837,7 @@ function installnetctlr {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}netctl${enda}"
-  xterm -e pacman -S --noconfirm netctl
+  pacman -S --noconfirm netctl
   echo -e " ${b}Skype${enda} Was Successfully Installed"
   echo && echo -e " Run netctl From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -853,7 +854,7 @@ function installNetworkManager {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}NetworkManager${enda}"
-  xterm -e pacman -S --noconfirm networkmanager
+  pacman -S --noconfirm networkmanager
   echo -e " ${b}NetworkManager${enda} Was Successfully Installed"
   echo && echo -e " Run networkmanager From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -870,7 +871,7 @@ function installsystemnet {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}systemd-networkd${enda}"
-  xterm -e pacman -S --noconfirm systemd
+  pacman -S --noconfirm systemd
   echo -e " ${b}systemd-networkd${enda} Was Successfully Installed"
   echo && echo -e " Run systemd-networkd From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -887,7 +888,7 @@ function installWicd {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Wicd${enda}"
-  xterm -e pacman -S --noconfirm wicd
+  pacman -S --noconfirm wicd
   echo -e " ${b}Wicd${enda} Was Successfully Installed"
   echo && echo -e " Run wicd From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -905,7 +906,7 @@ function installopenconnect {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}OpenConnect${enda}"
-  xterm -e pacman -S --noconfirm openconnect
+  pacman -S --noconfirm openconnect
   echo -e " ${b}OpenConnect${enda} Was Successfully Installed"
   echo && echo -e " Run openconnect From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -923,7 +924,7 @@ function installpptpclient  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}PPTP Client${enda}"
-  xterm -e pacman -S --noconfirm pptpclient
+  pacman -S --noconfirm pptpclient
   echo -e " ${b}PPTP Client${enda} Was Successfully Installed"
   echo && echo -e " Run pptpclient From The ${b}Terminal${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -944,7 +945,7 @@ function installfirefox  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Firefox${enda}"
-  xterm -e pacman -S --noconfirm firefox
+  pacman -S --noconfirm firefox
   echo -e " ${b}Firefox${enda} Was Successfully Installed"
   echo && echo -e " Run Firefox From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -996,7 +997,7 @@ function installvlc  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}VLC${enda}"
-  xterm -e pacman -S --noconfirm vlc
+  pacman -S --noconfirm vlc
   echo -e " ${b}VLC${enda} Was Successfully Installed"
   echo && echo -e " Run VLC From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1015,7 +1016,7 @@ function installpulse  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}PulseAudio${enda}"
-  xterm -e pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-equalizer
+  pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-equalizer
   echo -e " ${b}PulseAudio${enda} Was Successfully Installed"
   echo && echo -e " Run PulseAudio From The ${b}multimedia${enda} Menu or from Terminal ${b}pulseaudio${enda} "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1048,7 +1049,7 @@ function installwifimenu  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}wifi-menu${enda}"
-  xterm -e pacman -S --noconfirm wifi-menu dialog wpa_supplicant
+  pacman -S --noconfirm wifi-menu dialog wpa_supplicant
   echo -e " ${b}wifi-menu${enda} Was Successfully Installed"
   echo && echo -e " Run wifi-menu From The ${b}Terminal${enda}"
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1064,7 +1065,7 @@ function installgwget  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Gwget${enda}"
-  xterm -e pacman -S --noconfirm gwget
+  pacman -S --noconfirm gwget
   echo -e " ${b}Gwget${enda} Was Successfully Installed"
   echo && echo -e " Run Gwget From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1083,7 +1084,7 @@ function installkget  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}KGet${enda}"
-  xterm -e pacman -S --noconfirm kdenetwork-kget
+  pacman -S --noconfirm kdenetwork-kget
   echo -e " ${b}KGet${enda} Was Successfully Installed"
   echo && echo -e " Run KGet From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1101,7 +1102,7 @@ function installuget  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Uget${enda}"
-  xterm -e pacman -S --noconfirm uget
+  pacman -S --noconfirm uget
   echo -e " ${b}Uget${enda} Was Successfully Installed"
   echo && echo -e " Run Uget From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1118,7 +1119,7 @@ function installcurlftpfs  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Curl ftpfs${enda}"
-  xterm -e pacman -S --noconfirm curlftpfs
+  pacman -S --noconfirm curlftpfs
   echo -e " ${b}Curl ftpfs${enda} Was Successfully Installed"
   echo && echo -e " Run curlftpfs From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1136,7 +1137,7 @@ function installqbittorrent  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}qBittorrent${enda}"
-  xterm -e pacman -S --noconfirm qbittorrent qbittorrent-nox
+  pacman -S --noconfirm qbittorrent qbittorrent-nox
   echo -e " ${b}qBittorrent${enda} Was Successfully Installed"
   echo && echo -e " Run qBittorrent From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1156,7 +1157,7 @@ function installkmail  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Kmail${enda}"
-  xterm -e pacman -S --noconfirm kmail
+  pacman -S --noconfirm kmail
   echo -e " ${b}Kmail${enda} Was Successfully Installed"
   echo && echo -e " Run Kmail From The ${b}Internet${enda} menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1177,7 +1178,7 @@ function installclawsmail  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Claws Mail${enda}"
-  xterm -e pacman -S --noconfirm claws-mail
+  pacman -S --noconfirm claws-mail
   echo -e " ${b}Claws Mail${enda} Was Successfully Installed"
   echo && echo -e " Run Claws Mail From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1195,7 +1196,7 @@ function installhexchat  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}HexChat${enda}"
-  xterm -e pacman -S --noconfirm hexchat
+  pacman -S --noconfirm hexchat
   echo -e " ${b}HexChat${enda} Was Successfully Installed"
   echo && echo -e " Run HexChat From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1221,7 +1222,7 @@ function installobs  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Open Broadcaster Softwar Studio (OBS)${enda}"
-  xterm -e pacman -S --noconfirm obs-studio
+  pacman -S --noconfirm obs-studio
   echo -e " ${b}Open Broadcaster Softwar Studio (OBS)${enda} Was Successfully Installed"
   echo && echo -e " Run Open Broadcaster Softwar Studio (OBS) From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1241,7 +1242,7 @@ function installquassel  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Quassel${enda}"
-  xterm -e pacman -S --noconfirm quassel-core quassel-client quassel-monolithic
+  pacman -S --noconfirm quassel-core quassel-client quassel-monolithic
   echo -e " ${b}Quassel${enda} Was Successfully Installed"
   echo && echo -e " Run Quassel From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1279,7 +1280,7 @@ function installarmory  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Armory${enda}"
-  xterm -e  yaourt -S  armory-git --noconfirm
+  xterm -e yaourt -S  armory-git --noconfirm
   echo -e " ${b}Armory${enda} Was Successfully Installed"
   echo && echo -e " Run Armory From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1298,7 +1299,7 @@ function installbtc  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Bitcoin ${enda}"
-  xterm -e  pacman -S --noconfirm bitcoin-daemon bitcoin-qt
+  pacman -S --noconfirm bitcoin-daemon bitcoin-qt
   echo -e " ${b}Bitcoin ${enda} Was Successfully Installed"
   echo && echo -e " Run Bitcoin From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1316,7 +1317,7 @@ function installavidemux  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Avidemux${enda}"
-  xterm -e  pacman -S --noconfirm avidemux-cli avidemux-qt
+  pacman -S --noconfirm avidemux-cli avidemux-qt
   echo -e " ${b}Avidemux${enda} Was Successfully Installed"
   echo && echo -e " Run Avidemux From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1333,7 +1334,7 @@ function installffmpeg   {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}FFmpeg ${enda}"
-  xterm -e  pacman -S --noconfirm ffmpeg
+  pacman -S --noconfirm ffmpeg
   echo -e " ${b}FFmpeg ${enda} Was Successfully Installed"
   echo && echo -e " Run FFmpeg  From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1353,7 +1354,7 @@ function installkdenlive   {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Kdenlive ${enda}"
-  xterm -e  pacman -S --noconfirm kdenlive
+  pacman -S --noconfirm kdenlive
   echo -e " ${b}Kdenlive ${enda} Was Successfully Installed"
   echo && echo -e " Run Kdenlive  From The ${b}Multimedia${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1376,7 +1377,7 @@ function installlifearea  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Liferea${enda}"
-  xterm -e pacman -S --noconfirm liferea
+  pacman -S --noconfirm liferea
   echo -e " ${b}Liferea${enda} Was Successfully Installed"
   echo && echo -e " Run Liferea From The ${b}Internet${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1396,7 +1397,7 @@ function installkrita  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Krita${enda}"
-  xterm -e pacman -S --noconfirm krita
+  pacman -S --noconfirm krita
   echo -e " ${b}Krita${enda} Was Successfully Installed"
   echo && echo -e " Run Krita From The ${b}Graphics${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1413,7 +1414,7 @@ function installvim  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}VIM${enda}"
-  xterm -e pacman -S --noconfirm gvim
+  pacman -S --noconfirm gvim
   echo -e " ${b}VIM${enda} Was Successfully Installed"
   echo && echo -e " Run VIM From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1434,7 +1435,7 @@ function installkate  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Kate${enda}"
-  xterm -e pacman -S --noconfirm kate
+  pacman -S --noconfirm kate
   echo -e " ${b}Kate${enda} Was Successfully Installed"
   echo && echo -e " Run Kate From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1473,7 +1474,7 @@ function installanjuta  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Anjuta${enda}"
-  xterm -e pacman -S --noconfirm anjuta
+  pacman -S --noconfirm anjuta
   echo -e " ${b}Anjuta${enda} Was Successfully Installed"
   echo && echo -e " Run Anjuta From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1508,7 +1509,7 @@ function installbluefish  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Bluefish${enda}"
-  xterm -e pacman -S --noconfirm bluefish
+  pacman -S --noconfirm bluefish
   echo -e " ${b}Bluefish${enda} Was Successfully Installed"
   echo && echo -e " Run Bluefish From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1565,7 +1566,7 @@ function installcodeblocks {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Code::Blocks${enda}"
-  xterm -e pacman -S  --noconfirm codeblocks
+  pacman -S  --noconfirm codeblocks
   echo -e " ${b}Code::Blocks${enda} Was Successfully Installed"
   echo && echo -e " Run Code::Blocks From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1600,7 +1601,7 @@ function installeclipse {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Eclipse (Java)${enda}"
-  xterm -e pacman -S --noconfirm eclipse-java
+  pacman -S --noconfirm eclipse-java
   echo -e " ${b}Eclipse (Java)${enda} Was Successfully Installed"
   echo && echo -e " Run Eclipse (Java) From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1636,7 +1637,7 @@ function installintellij {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}IntelliJ IDEA${enda}"
-  xterm -e pacman -S --noconfirm intellij-idea-community-edition
+  pacman -S --noconfirm intellij-idea-community-edition
   echo -e " ${b}IntelliJ IDEA${enda} Was Successfully Installed"
   echo && echo -e " Run IntelliJ IDEA From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1653,7 +1654,7 @@ function installmonodev {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}MonoDevelop${enda}"
-  xterm -e pacman -S --noconfirm monodevelop
+  pacman -S --noconfirm monodevelop
   echo -e " ${b}MonoDevelop${enda} Was Successfully Installed"
   echo && echo -e " Run MonoDevelop From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1671,7 +1672,7 @@ function installnetbeans {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Netbeans${enda}"
-  xterm -e pacman -S --noconfirm netbeans
+  pacman -S --noconfirm netbeans
   echo -e " ${b}Netbeans${enda} Was Successfully Installed"
   echo && echo -e " Run Netbeans From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1689,7 +1690,7 @@ function installninja {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Ninja-IDE${enda}"
-  xterm -e pacman -S --noconfirm ninja-ide
+  pacman -S --noconfirm ninja-ide
   echo -e " ${b}Ninja-IDE${enda} Was Successfully Installed"
   echo && echo -e " Run Ninja-IDE From The ${b}Development${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1762,7 +1763,7 @@ function installdocky {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Docky${enda}"
-  xterm -e pacman -S --noconfirm docky
+  pacman -S --noconfirm docky
   echo -e " ${b}Docky${enda} Was Successfully Installed"
   echo && echo -e " Run Docky From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1779,7 +1780,7 @@ function installxfburn {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}XFburn${enda}"
-  xterm -e pacman -S --noconfirm xfburn
+  pacman -S --noconfirm xfburn
   echo -e " ${b}XFburn${enda} Was Successfully Installed"
   echo && echo -e " Run XFburn From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1797,7 +1798,7 @@ function installsteam {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Steam${enda}"
-  xterm -e pacman -S --noconfirm steam
+  pacman -S --noconfirm steam
   echo -e " ${b}Steam${enda} Was Successfully Installed"
   echo && echo -e " Run Steam From The ${b}Accessories${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1848,7 +1849,7 @@ function installlibreoffi  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Libre Office${enda}"
-  xterm -e pacman -S libreoffice-fresh --noconfirm
+  pacman -S libreoffice-fresh --noconfirm
   echo -e " ${b}Libre Office${enda} Was Successfully Installed"
   echo && echo -e " Run Libre Office From The ${b}Office${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1864,7 +1865,7 @@ function installhrdinfo  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}HardInfo${enda}"
-  xterm -e pacman -S --noconfirm hardinfo
+  pacman -S --noconfirm hardinfo
   echo -e " ${b}HardInfo${enda} Was Successfully Installed"
   echo && echo -e " Run HardInfo From The ${b}System${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
@@ -1883,7 +1884,7 @@ function installvirtualbox  {
   echo && echo -en " ${y}Press Enter To Continue${endc}"
   read input
   echo -e " Installing ${b}Virtual Box${enda}"
-  xterm -e pacman -S --noconfirm virtualbox qt4
+  pacman -S --noconfirm virtualbox qt4
   echo -e " ${b}Virtual Box${enda} Was Successfully Installed"
   echo && echo -e " Run Virtual Box From The ${b}System${enda} Menu "
   echo && echo -en " ${y}Press Enter To Return To Menu${endc}"
