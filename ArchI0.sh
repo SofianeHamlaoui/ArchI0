@@ -132,7 +132,7 @@ else
 echo [x]::[warning]:this script require Git ;
 echo ""
 echo [!]::[please wait]: Installing Git ..  ;
-pacman -S Git --noconfirm
+pacman -S git --noconfirm
 echo ""
 fi
 sleep 1
